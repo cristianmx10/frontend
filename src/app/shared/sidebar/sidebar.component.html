@@ -1,0 +1,16 @@
+<mat-accordion *ngFor="let menu of _sidebarService.menu">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-icon>{{menu.icon}}</mat-icon>
+                {{menu.titulo}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <a routerLinkActive="mat-accent" [routerLink]="[submenu.url]" button mat-raised-button *ngFor="let submenu of menu.submenu" class="mt-2 block">
+            <mat-icon>
+                {{submenu.icon}}
+            </mat-icon>
+            {{submenu.titulo}}
+        </a>
+    </mat-expansion-panel>
+</mat-accordion>
